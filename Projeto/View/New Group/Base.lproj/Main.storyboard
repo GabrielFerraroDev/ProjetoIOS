@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z3M-Eo-DHp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Departamentos-->
+        <scene sceneID="qW7-lw-Wf7">
+            <objects>
+                <tableViewController id="NTI-vO-Ucw" customClass="DepartamentoTableViewController" customModule="Projeto" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jET-mQ-6WV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepartamentoTableViewCell" rowHeight="40" id="zoe-ph-GOP" customClass="DepartamentoTableViewCell" customModule="Projeto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zoe-ph-GOP" id="SXF-CB-xof">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IC-QB-EdL">
+                                            <rect key="frame" x="16" y="5" width="343" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nomeDep" destination="4IC-QB-EdL" id="ocH-k9-a4z"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="PWE-f7-whS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NTI-vO-Ucw" id="jq0-hp-b5f"/>
+                            <outlet property="delegate" destination="NTI-vO-Ucw" id="iG7-UW-g7g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Departamentos" id="8HK-E9-iIQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2uY-Uh-NhT">
+                            <connections>
+                                <segue destination="Gfs-HH-0Q2" kind="presentation" identifier="AddItem" id="SeF-Ac-TcV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ll-5P-bMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="112.89355322338831"/>
+        </scene>
+        <!--Novo Departamento-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Projeto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do departamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q9-xq-FTb">
+                                <rect key="frame" x="16" y="95" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0o-uE-tea">
+                                <rect key="frame" x="16" y="124" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sigla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-11-gC0">
+                                <rect key="frame" x="16" y="159" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sigla do departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYZ-Ak-kcE">
+                                <rect key="frame" x="16" y="188" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kB-U2-xpH">
+                                <rect key="frame" x="16" y="251" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Funcionarios"/>
+                                <connections>
+                                    <action selector="FuncInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vKF-RB-MH4"/>
+                                    <segue destination="Kqn-V4-5XP" kind="show" identifier="func" id="llT-Tv-KbU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jYZ-Ak-kcE" firstAttribute="top" secondItem="cbM-11-gC0" secondAttribute="bottom" constant="8" symbolic="YES" id="1OW-wq-Klp"/>
+                            <constraint firstItem="0Q9-xq-FTb" firstAttribute="trailing" secondItem="W0o-uE-tea" secondAttribute="trailing" id="2Yz-zQ-Mgq"/>
+                            <constraint firstItem="W0o-uE-tea" firstAttribute="leading" secondItem="cbM-11-gC0" secondAttribute="leading" id="4K6-ji-4Oe"/>
+                            <constraint firstItem="0Q9-xq-FTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="4LN-QA-DuD"/>
+                            <constraint firstItem="cbM-11-gC0" firstAttribute="leading" secondItem="jYZ-Ak-kcE" secondAttribute="leading" id="DOw-uh-GVj"/>
+                            <constraint firstItem="0Q9-xq-FTb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="M56-sJ-pAD"/>
+                            <constraint firstItem="W0o-uE-tea" firstAttribute="trailing" secondItem="cbM-11-gC0" secondAttribute="trailing" id="Uss-Sr-gxl"/>
+                            <constraint firstItem="W0o-uE-tea" firstAttribute="top" secondItem="0Q9-xq-FTb" secondAttribute="bottom" constant="8" symbolic="YES" id="WBT-Lf-Wpe"/>
+                            <constraint firstItem="0Q9-xq-FTb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XuU-no-3ND"/>
+                            <constraint firstItem="cbM-11-gC0" firstAttribute="top" secondItem="W0o-uE-tea" secondAttribute="bottom" constant="5" id="dsZ-LV-tkU"/>
+                            <constraint firstItem="cbM-11-gC0" firstAttribute="trailing" secondItem="jYZ-Ak-kcE" secondAttribute="trailing" id="ruU-8G-doS"/>
+                            <constraint firstItem="0Q9-xq-FTb" firstAttribute="leading" secondItem="W0o-uE-tea" secondAttribute="leading" id="xvy-Vf-xuK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo Departamento" id="cYq-3Z-Tr2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HDP-Dn-WbL">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="8w6-g9-7NE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Jqe-rH-Zhi">
+                            <connections>
+                                <segue destination="8zI-Xh-NhJ" kind="unwind" unwindAction="unwindToDepartamentListWithSender:" id="UCI-Bz-Zgm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SaveButton" destination="Jqe-rH-Zhi" id="R70-qJ-G7h"/>
+                        <outlet property="funcionariosButton" destination="5kB-U2-xpH" id="NSB-8b-pcU"/>
+                        <outlet property="nomeDepartamento" destination="W0o-uE-tea" id="UI0-3C-Ofr"/>
+                        <outlet property="siglaDepartamento" destination="jYZ-Ak-kcE" id="dpc-3a-BuK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="8zI-Xh-NhJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="118.29085457271366"/>
+        </scene>
+        <!--TableFunc-->
+        <scene sceneID="VFT-Zb-MkC">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TableFunc" storyboardName="FuncionariosStoryBoard" referencedIdentifier="TableFunc" id="Kqn-V4-5XP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnj-bt-ZVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3006" y="-70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wlv-cn-pvY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z3M-Eo-DHp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6WE-NU-8Xz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NTI-vO-Ucw" kind="relationship" relationship="rootViewController" id="6gx-uO-wR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sK2-FC-lLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666.39999999999998" y="112.89355322338831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DrL-cj-0H9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gfs-HH-0Q2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qh9-4f-vvR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ueu-Zh-cyV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGa-vt-sjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="559"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PWE-f7-whS"/>
+    </inferredMetricsTieBreakers>
+</document>

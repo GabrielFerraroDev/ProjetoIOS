@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Funcionarios-->
+        <scene sceneID="39I-wp-fdE">
+            <objects>
+                <tableViewController storyboardIdentifier="TableFunc" id="7lA-mF-1Pt" customClass="FuncTableViewController" customModule="Projeto" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fBo-dL-Lgp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FuncTableViewCell" rowHeight="82" id="gfx-I9-f3T" customClass="FuncTableViewCell" customModule="Projeto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfx-I9-f3T" id="pe6-z2-Rkv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="kVu-2d-PRz">
+                                            <rect key="frame" x="0.0" y="0.0" width="91" height="82"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk3-l9-Q1i">
+                                            <rect key="frame" x="107" y="11" width="268" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0s-fB-N6Y">
+                                            <rect key="frame" x="107" y="40" width="268" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="FotoFunc" destination="kVu-2d-PRz" id="elt-H6-uMd"/>
+                                    <outlet property="NomeFunc" destination="Rk3-l9-Q1i" id="ewI-U9-0mU"/>
+                                    <outlet property="RGFunc" destination="R0s-fB-N6Y" id="re6-TL-Fez"/>
+                                    <segue destination="CcN-Pg-GM1" kind="show" identifier="ShowDetail" id="9aK-cZ-zfG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7lA-mF-1Pt" id="cdH-hK-Pdv"/>
+                            <outlet property="delegate" destination="7lA-mF-1Pt" id="cDL-lw-XnU"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Funcionarios" id="lrL-gm-qEP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xdk-Tt-DGa">
+                            <connections>
+                                <segue destination="FeN-gM-3JJ" kind="show" identifier="AddItem" id="QpI-j3-R6g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UmI-Sk-7w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="111.99400299850076"/>
+        </scene>
+        <!--Novo Funcionario-->
+        <scene sceneID="Tth-0c-nRK">
+            <objects>
+                <viewController storyboardIdentifier="Funcionarios" id="CcN-Pg-GM1" customClass="FuncViewController" customModule="Projeto" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x8s-Rt-Np9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPt-EV-8Z3">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zzn-uA-ezc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-p2-dzb">
+                                <rect key="frame" x="16" y="149" width="242" height="130"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8Ne-4e-1Uf" appends="YES" id="B6F-PU-jRP"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RG" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JRg-wU-DgW">
+                                <rect key="frame" x="16" y="310" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="25W-Ye-YKg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6ad-r2-ezI" firstAttribute="bottom" secondItem="JRg-wU-DgW" secondAttribute="bottom" constant="283" id="9GX-x6-T1M"/>
+                            <constraint firstItem="pPt-EV-8Z3" firstAttribute="trailing" secondItem="x8s-Rt-Np9" secondAttribute="trailingMargin" id="AC6-9O-XGo"/>
+                            <constraint firstItem="pPt-EV-8Z3" firstAttribute="top" secondItem="6ad-r2-ezI" secondAttribute="top" constant="32" id="FxM-Ba-tQW"/>
+                            <constraint firstItem="pPt-EV-8Z3" firstAttribute="leading" secondItem="gm1-p2-dzb" secondAttribute="leading" id="JQt-bE-eug"/>
+                            <constraint firstItem="JRg-wU-DgW" firstAttribute="top" secondItem="gm1-p2-dzb" secondAttribute="bottom" constant="31" id="LFj-WQ-Coi"/>
+                            <constraint firstItem="gm1-p2-dzb" firstAttribute="leading" secondItem="JRg-wU-DgW" secondAttribute="leading" id="U8a-NA-TPf"/>
+                            <constraint firstItem="pPt-EV-8Z3" firstAttribute="trailing" secondItem="JRg-wU-DgW" secondAttribute="trailing" id="UgY-52-b9w"/>
+                            <constraint firstItem="6ad-r2-ezI" firstAttribute="trailing" secondItem="gm1-p2-dzb" secondAttribute="trailing" constant="117" id="YYv-Ei-j28"/>
+                            <constraint firstItem="gm1-p2-dzb" firstAttribute="top" secondItem="pPt-EV-8Z3" secondAttribute="bottom" constant="23" id="d4X-n2-Opc"/>
+                            <constraint firstItem="pPt-EV-8Z3" firstAttribute="leading" secondItem="x8s-Rt-Np9" secondAttribute="leadingMargin" id="kvu-Ae-hsa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6ad-r2-ezI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo Funcionario" id="tpm-Y5-e9k">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OKn-XC-jcI">
+                            <connections>
+                                <action selector="cancel:" destination="CcN-Pg-GM1" id="KDc-BC-C1X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dH1-k8-Wet">
+                            <connections>
+                                <segue destination="uB9-q5-z4b" kind="unwind" unwindAction="unwindToFuncListWithSender:" id="GS1-7p-hCn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="FotoFunc" destination="gm1-p2-dzb" id="o2p-02-oLF"/>
+                        <outlet property="NomeFunc" destination="pPt-EV-8Z3" id="SKg-FX-aXj"/>
+                        <outlet property="RGFunc" destination="JRg-wU-DgW" id="Qhc-Sw-7p2"/>
+                        <outlet property="SaveButton" destination="dH1-k8-Wet" id="L32-uR-j6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqf-w9-krA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uB9-q5-z4b" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="8Ne-4e-1Uf">
+                    <connections>
+                        <action selector="SelecionaImagem:" destination="CcN-Pg-GM1" id="uog-UL-oLp"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2120.8000000000002" y="111.99400299850076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tdw-Ge-H8h">
+            <objects>
+                <navigationController storyboardIdentifier="FuncNav" automaticallyAdjustsScrollViewInsets="NO" id="uoM-yr-5I9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dtE-Mm-TD6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7lA-mF-1Pt" kind="relationship" relationship="rootViewController" id="jgP-pj-nDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fb5-Y1-jok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aMD-YF-Uzs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FeN-gM-3JJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FW0-UC-HOY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CcN-Pg-GM1" kind="relationship" relationship="rootViewController" id="XiU-Mr-kcC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jap-oH-v8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="564"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9aK-cZ-zfG"/>
+    </inferredMetricsTieBreakers>
+</document>
