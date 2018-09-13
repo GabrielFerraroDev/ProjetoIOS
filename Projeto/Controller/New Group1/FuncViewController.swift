@@ -18,9 +18,9 @@ class FuncViewController: UIViewController , UITextFieldDelegate, UIImagePickerC
     
     
     
-    var IdFunc : Int = 0
-    var IdDepartamentoFunc  : Int = 0
     
+    var IdDepartamentoFunc  : Int = 0
+    var IdFunc : Int = 1
     
     
     /*
@@ -29,6 +29,7 @@ class FuncViewController: UIViewController , UITextFieldDelegate, UIImagePickerC
      */
     var funcionario: Funcionario?
     var departamento : Departamento?
+    let defaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -37,6 +38,11 @@ class FuncViewController: UIViewController , UITextFieldDelegate, UIImagePickerC
         // Handle the text field’s user input through delegate callbacks.
         NomeFunc.delegate = self
         RGFunc.delegate = self
+         let idFun = defaults.integer(forKey: "id")
+        if idFun == 0 {
+            defaults.set(IdFunc, forKey:"id")
+        }
+            
         
         
         // Set up views if editing an existing Meal.
@@ -128,17 +134,20 @@ class FuncViewController: UIViewController , UITextFieldDelegate, UIImagePickerC
             let nome = NomeFunc.text ?? ""
             let foto = FotoFunc.image
             let RG = RGFunc.text ?? ""
-                 IdFunc = IdFunc + 1
+        
         
         
             let idDepFunc = self.departamento?.id
+        let idFun2 = defaults.integer(forKey: "id")
+        
             
         
         
             
             
             // Set the meal to be passed to MealTableViewController after the unwind segue.
-        funcionario = Funcionario( id:IdFunc,nome: nome, foto: foto, RG: RG, idDepartamento: idDepFunc!)
+        funcionario = Funcionario( id:(idFun2),nome: nome, foto: foto, RG: RG, idDepartamento: idDepFunc!)
+        defaults.set((idFun2+1), forKey: "id")
             
         
             

@@ -24,7 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
      or constructed as part of adding a new meal.
      */
     var departamento: Departamento?
-    
+    var IdDep : Int = 1
+    let defaults = UserDefaults.standard
     
     
     
@@ -35,6 +36,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Handle the text field’s user input through delegate callbacks.
         nomeDepartamento.delegate = self
         siglaDepartamento.delegate = self
+        
+        let idDepart = defaults.integer(forKey: "idDepart")
+        if idDepart == 0 {
+            defaults.set(IdDep, forKey: "idDepart")
+        }
         
         
         // Set up views if editing an existing Meal.
@@ -129,10 +135,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         let nome = nomeDepartamento.text ?? ""
         let sigla = siglaDepartamento.text ?? ""
-        let idDep = Int(arc4random_uniform(10000))
+        let idDep2 = defaults.integer(forKey: "idDepart")
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        departamento = Departamento(id: idDep, nome: nome, sigla: sigla)
+        departamento = Departamento(id: idDep2, nome: nome, sigla: sigla)
+        defaults.set((idDep2+1), forKey: "idDepart")
     }
     
     
